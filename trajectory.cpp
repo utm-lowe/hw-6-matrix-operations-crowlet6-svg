@@ -88,7 +88,11 @@ int main() {
         // 3. If the current position exceeds the grid height, update the grid
         //    height to the y coordinate + 1.
         // YOUR CODE HERE
-
+        position = position + velocity * deltaTime;
+        velocity = velocity + gravity * deltaTime;
+        if(position.at(1,0) > gridHeight){
+            gridHeight = position.at(1,0) + 1;
+        }
         // We will be talking about the vector object a little later. If you 
         // want to read ahead though, I encourage that!
         // Store the current position
