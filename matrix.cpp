@@ -157,7 +157,6 @@ std::ostream& operator<<(std::ostream& os, const Matrix& m){
         }
         os << '\n';
     }
-    os << '\n';
     return os;
 }
 
