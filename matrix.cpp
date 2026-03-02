@@ -101,6 +101,7 @@ Matrix operator+(const Matrix& m1, const Matrix& m2){
             result.at(i, j) = m1.at(i, j) + m2.at(i, j);
         }
     }
+    return result;
 }
 
 Matrix operator-(const Matrix& m1, const Matrix& m2){
@@ -110,6 +111,7 @@ Matrix operator-(const Matrix& m1, const Matrix& m2){
             result.at(i, j) = m1.at(i, j) - m2.at(i, j);
         }
     }
+    return result;
 }
 
 Matrix operator*(const Matrix& m1, const Matrix& m2){
@@ -118,8 +120,8 @@ Matrix operator*(const Matrix& m1, const Matrix& m2){
     for(int i = 0; i < m1.getRows(); ++i){
         for(int j = 0; j < m2.getCols(); ++j){
             double sum = 0.0;
-            for(int k = 0; k < m1.getCols(); ++i){
-               sum += m1.at(i, k) - m2.at(k, j);
+            for(int k = 0; k < m1.getCols(); ++k){
+               sum += m1.at(i, k) * m2.at(k, j);
             }
             result.at(i, j) = sum;
         }
@@ -145,4 +147,25 @@ Matrix operator*(const Matrix& m, double scalar){
         }
     }
     return result;
+}
+
+std::ostream& operator<<(std::ostream& os, const Matrix& m){
+
+    for(int i = 0; i < m.getRows(); ++i){
+        for(int j = 0; j < m.getCols(); ++j){
+            os << std::setw(10) << m.at(i,j) << " ";
+        }
+        os << '\n';
+    }
+    os << '\n';
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Matrix& m){
+    for(int i = 0; i < m.getRows(); ++i){
+        for(int j = 0; j < m.getCols(); ++j){
+            is >> m.at(i,j);
+        }
+    }
+    return is;
 }

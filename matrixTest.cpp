@@ -28,11 +28,11 @@ int main()
     cout << b << endl;
 
     // Test out matrix arithmetic
-    //cout << "A + B" << endl << a+b << endl;
-    //cout << "A - B" << endl << a-b << endl;
-    //cout << "A * B" << endl << a*b << endl;
+    cout << "A + B" << endl << a+b << endl;
+    cout << "A - B" << endl << a-b << endl;
+    cout << "A * B" << endl << a*b << endl;
 
     // Test out scalar multiplication
-    //cout << "2*A" << endl << 2*a << endl;
-    //cout << "A*2" << endl << a*2 << endl;
+    cout << "2*A" << endl << 2*a << endl;
+    cout << "A*2" << endl << a*2 << endl;
 }
