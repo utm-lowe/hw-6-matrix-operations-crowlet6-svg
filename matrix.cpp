@@ -98,7 +98,7 @@ Matrix operator+(const Matrix& m1, const Matrix& m2){
     Matrix result(m1.getRows(), m1.getCols());
     for(int i = 0; i < m1.getRows(); ++i){
         for(int j = 0; j < m1.getCols(); ++j){
-            result.at(i, j) = m1.at(i, j) + m2.at(i, j);
+            result.at(i,j) = m1.at(i,j) + m2.at(i,j);
         }
     }
     return result;
@@ -108,7 +108,7 @@ Matrix operator-(const Matrix& m1, const Matrix& m2){
     Matrix result(m1.getRows(), m1.getCols());
     for(int i = 0; i < m1.getRows(); ++i){
         for(int j = 0; j < m1.getCols(); ++j){
-            result.at(i, j) = m1.at(i, j) - m2.at(i, j);
+            result.at(i,j) = m1.at(i,j) - m2.at(i,j);
         }
     }
     return result;
@@ -123,7 +123,7 @@ Matrix operator*(const Matrix& m1, const Matrix& m2){
             for(int k = 0; k < m1.getCols(); ++k){
                sum += m1.at(i, k) * m2.at(k, j);
             }
-            result.at(i, j) = sum;
+            result.at(i,j) = sum;
         }
     }
     return result;
@@ -143,7 +143,7 @@ Matrix operator*(const Matrix& m, double scalar){
     Matrix result(m.getRows(), m.getCols());
     for(int i = 0; i < m.getRows(); ++i){
         for(int j = 0; j < m.getCols(); ++j){
-            result.at(i, j) = m.at(i, j) * scalar;
+            result.at(i, j) = m.at(i,j) * scalar;
         }
     }
     return result;
